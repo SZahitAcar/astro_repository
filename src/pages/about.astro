@@ -1,4 +1,6 @@
 ---
+const pageTitle = "About";
+const pageHeader= "About Page";
 ---
 
 <html lang="en">
@@ -7,7 +9,7 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>About Page</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
         <nav>
@@ -15,7 +17,7 @@
             <a href="/about/">About</a>
             <a href="/blog/">Blog</a>
         </nav>
-		<h1>About Page</h1>
+		<h1>{pageHeader}</h1>
         <article>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem, eaque?</article>
         <section>somethin here</section>
 	</body>
