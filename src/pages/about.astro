@@ -1,6 +1,20 @@
 ---
 const pageTitle = "About";
 const pageHeader= "About Page";
+
+const identity = {
+	firstName: "Zahit",
+	lastName: "Acar",
+	country: "Turkey",
+	occupation: "Civil Engineer",
+	hobbies : ["Videography","Reading","swimming", "Fishing"]
+}
+
+const skills = ["HTML","CSS","JavaScript"]
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -18,7 +32,20 @@ const pageHeader= "About Page";
             <a href="/blog/">Blog</a>
         </nav>
 		<h1>{pageHeader}</h1>
-        <article>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem, eaque?</article>
-        <section>somethin here</section>
+        
+		<section>
+			<p>Here are some facts about me: </p>
+			{happy && <ul>
+				<li>
+					My name is {identity.firstName}
+				</li>
+				<li>
+					I live in {identity.country} and I work as a {identity.occupation}.
+				</li>
+				<li>
+					I have some hobbies but {identity.hobbies[3]} is the best for me, I really like it.
+				</li>
+			</ul>}
+		</section>
 	</body>
 </html>
