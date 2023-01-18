@@ -1,4 +1,11 @@
 ---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+
+
+
 const pageTitle = "About";
 const pageHeader= "About Page";
 
@@ -10,11 +17,15 @@ const identity = {
 	hobbies : ["Videography","Reading","swimming", "Fishing"]
 }
 
-const skills = ["HTML","CSS","JavaScript"]
+const skills = ["HTML","CSS","JavaScript","Premier Pro"]
 
 const happy = true;
 const finished = false;
 const goal = 3;
+
+let skillColor = "navy";
+let fontWeight = "bold";
+let fontTransform = "uppercase"
 ---
 
 <html lang="en">
@@ -24,28 +35,25 @@ const goal = 3;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<style>
+			h1{
+				font-size: 4rem;
+				
+			}
+		</style>
+		
 	</head>
 	<body>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/about/">About</a>
-            <a href="/blog/">Blog</a>
-        </nav>
+        <Header />
 		<h1>{pageHeader}</h1>
         
 		<section>
 			<p>Here are some facts about me: </p>
-			{happy && <ul>
-				<li>
-					My name is {identity.firstName}
-				</li>
-				<li>
-					I live in {identity.country} and I work as a {identity.occupation}.
-				</li>
-				<li>
-					I have some hobbies but {identity.hobbies[3]} is the best for me, I really like it.
-				</li>
+			{happy && 
+			<ul>
+				{skills.map((skill) => <li class="skill">{skill}</li>)}	
 			</ul>}
 		</section>
+		<Footer />
 	</body>
 </html>

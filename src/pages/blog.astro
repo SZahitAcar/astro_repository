@@ -1,4 +1,8 @@
 ---
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 const pageTitle = "Blog Page";
 ---
 
@@ -9,13 +13,10 @@ const pageTitle = "Blog Page";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		
 	</head>
 	<body>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/about/">About</a>
-            <a href="/blog/">Blog</a>
-        </nav>
+		<Header/>
 		<h1>{pageTitle}</h1>
 		<ul>
 			<li>
@@ -30,5 +31,6 @@ const pageTitle = "Blog Page";
 		</ul>
         <article>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem, eaque?</article>
         <section>somethin here</section>
+		<Footer/>
 	</body>
 </html>
